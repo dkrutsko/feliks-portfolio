@@ -10,7 +10,8 @@
 		"url": "git+https://github.com/dkrutsko/feliks.krutsko.net.git"
 	},
 	"scripts": {
-		"build": "node build"
+		"build": "node build",
+		"watch": "npm run build; watch -p build.js -p index.hbs -c 'npm run build'"
 	},
 	"dependencies": {
 		"handlebars": "~4.7"
