@@ -7,7 +7,8 @@ const handlebars = require ('handlebars' );
 const PHOTO_NAMES =
 [
 	// Misc
-	'2012_07_02_fhaeq7b6',
+	'2022_01_09_06goh31n',
+//	'2012_07_02_fhaeq7b6',
 
 	// Cube
 	'2018_08_08_vzlxnj27',
@@ -21,6 +22,10 @@ const PHOTO_NAMES =
 //	'2013_27_09_sllpvtgb',
 //	'2013_27_09_1yd22h40',
 	'2013_20_12_s1cbibsr',
+	'2004_03_27_eafklbw5',
+	'2004_03_27_448gk28n',
+	'2004_03_27_scj70nfs',
+	'2004_03_27_au8tvh9l',
 	'2014_24_10_ixlibfss',
 	'2013_21_04_kdhldjqc',
 	'2013_12_11_xcenec2f',
