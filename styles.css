@@ -3,16 +3,41 @@
 /* Base                                                                       */
 /*----------------------------------------------------------------------------*/
 
+:root
+{
+	--bs-body-color-rgb: 33, 37, 41;
+	--bs-body-color: #212529;
+
+	--bs-body-bg-rgb: 245, 245, 245;
+	--bs-body-bg: #F6F6F6;
+
+	--bs-body-font-weight: 300;
+	--bs-font-sans-serif:
+		"Open Sans",
+		system-ui,
+		-apple-system,
+		"Segoe UI",
+		Roboto,
+		"Helvetica Neue",
+		Arial,
+		"Noto Sans",
+		"Liberation Sans",
+		sans-serif,
+		"Apple Color Emoji",
+		"Segoe UI Emoji",
+		"Segoe UI Symbol",
+		"Noto Color Emoji";
+}
+
 html
 {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 html, body
 {
 	 width: 100%;
 	height: 100%;
-	background: rgb(245, 245, 245);
 }
 
 .site-body
@@ -57,4 +82,254 @@ label > *
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Generic                                                                    */
+/*----------------------------------------------------------------------------*/
+
+img.lazy-image
+{
+	opacity: 0;
+	transition: opacity 250ms ease-in-out;
+}
+
+img.lazy-image.lazy-image-loaded
+{
+	opacity: 1;
+}
+
+html.no-js img.lazy-image
+{
+	display: none;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Utilities                                                                  */
+/*----------------------------------------------------------------------------*/
+
+.font-weight-light		{ font-weight: 300 !important; }
+.font-weight-300		{ font-weight: 300 !important; }
+
+.font-weight-regular	{ font-weight: 400 !important; }
+.font-weight-400		{ font-weight: 400 !important; }
+
+.font-weight-medium		{ font-weight: 500 !important; }
+.font-weight-500		{ font-weight: 500 !important; }
+
+.font-weight-semi-bold	{ font-weight: 600 !important; }
+.font-weight-600		{ font-weight: 600 !important; }
+
+.font-weight-bold		{ font-weight: 700 !important; }
+.font-weight-700		{ font-weight: 700 !important; }
+
+.font-weight-extra-bold	{ font-weight: 800 !important; }
+.font-weight-800		{ font-weight: 800 !important; }
+
+/*----------------------------------------------------------------------------*/
+
+.font-campton { font-family: 'Campton', var(--bs-font-sans-serif) !important; }
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Header                                                                     */
+/*----------------------------------------------------------------------------*/
+
+.site-header hr
+{
+	margin: 0rem;
+	border: none;
+	border-top: 1px solid rgb(100, 100, 100);
+}
+
+.site-header .part-h1 { letter-spacing: 1.5px; }
+.site-header .part-h2 { letter-spacing: 1.0px; }
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Photos                                                                     */
+/*----------------------------------------------------------------------------*/
+
+.site-photos .part-thumb
+{
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+
+	box-shadow: 0rem 0rem 1.25rem rgb(225, 225, 225);
+}
+
+.site-photos .part-thumb .part-holder
+{
+	 width: 400px;
+	height: auto;
+	max-width: 100%;
+}
+
+.site-photos .part-thumb .part-sprite
+{
+	width: 100%;
+	position: absolute;
+	left: 0rem;
+	 top: 0rem;
+
+	filter: brightness(1.0) saturate(1.0);
+	transition: opacity 250ms ease-in-out,
+	            filter  100ms ease-in-out;
+}
+
+.site-photos .part-thumb:hover .part-sprite
+{
+	filter: brightness(1.1) saturate(1.6);
+}
+
+/*----------------------------------------------------------------------------*/
+
+.site-photos .part-photo
+{
+	display: none;
+
+	position: fixed;
+	 left: 0rem;    top: 0rem;
+	right: 0rem; bottom: 0rem;
+	z-index: 1030;
+
+	padding: 1rem;
+	background: rgba(0, 0, 0, 0.85);
+
+	justify-content: center;
+	    align-items: center;
+}
+
+.site-photos .sa-radio:checked + .part-photo
+{
+	display: flex;
+}
+
+.site-photos .part-photo .part-canvas
+{
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	    align-items: center;
+}
+
+/*----------------------------------------------------------------------------*/
+
+.site-photos .part-photo .part-close
+{
+	margin: 1rem;
+	position: absolute;
+	  top: 0rem;
+	right: 0rem;
+
+	cursor: pointer;
+}
+
+.site-photos .part-photo .part-close .part-icon
+{
+	  width: 3.0rem;
+	 height: 3.0rem;
+	padding: 0.5rem;
+	border-radius: 50%;
+	font-size: 1.0rem;
+
+	display: flex;
+	justify-content: center;
+	    align-items: center;
+
+	background: rgba(245, 245, 245, 0.8);
+	transition: background 200ms ease-in-out;
+}
+
+.site-photos .part-photo .part-close:hover .part-icon
+{
+	background: rgba(245, 245, 245, 0.6);
+}
+
+/*----------------------------------------------------------------------------*/
+
+.site-photos .part-photo .part-canvas .part-prev,
+.site-photos .part-photo .part-canvas .part-next
+{
+	display: flex;
+	cursor: pointer;
+
+	 width: 6rem;
+	height: 100%;
+	position: absolute;
+	top: 0rem;
+
+	opacity: 0.01; /* For mobile to pick up on */
+	transition: opacity 200ms ease-in-out 750ms;
+}
+
+.site-photos .part-photo .part-canvas .part-prev {  left: 0rem; justify-content: flex-start; }
+.site-photos .part-photo .part-canvas .part-next { right: 0rem; justify-content: flex-end;   }
+
+.site-photos .part-photo .part-canvas:hover .part-prev,
+.site-photos .part-photo .part-canvas:hover .part-next
+{
+	opacity: 1.00;
+	transition: none;
+}
+
+.site-photos .part-photo .part-canvas .part-prev .part-nav,
+.site-photos .part-photo .part-canvas .part-next .part-nav
+{
+	display: flex;
+	justify-content: center;
+	    align-items: center;
+
+	 width: 5rem;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.site-photos .part-photo .part-canvas .part-prev .part-nav .part-icon,
+.site-photos .part-photo .part-canvas .part-next .part-nav .part-icon
+{
+	  width: 3.0rem;
+	 height: 3.0rem;
+	padding: 0.5rem;
+	border-radius: 50%;
+	font-size: 1.0rem;
+
+	display: flex;
+	justify-content: center;
+	    align-items: center;
+
+	background: rgba(245, 245, 245, 0.9);
+}
+
+/*----------------------------------------------------------------------------*/
+
+.site-photos .part-photo .part-canvas .part-sprite
+{
+	max-width:  100%;
+	max-height: 90vh;
+	object-fit: contain;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Fonts                                                                      */
+/*----------------------------------------------------------------------------*/
+
+@font-face
+{
+	font-family: 'Campton';
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+	src: url('fonts/campton-600.woff2') format('woff2'),
+	     url('fonts/campton-600.woff' ) format('woff' );
 }

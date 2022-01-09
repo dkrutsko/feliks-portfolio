@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+<head>
+
+	<title>Feliks Krutsko - Professional Welder &amp; Fitter Portfolio</title>
+	<meta name="description" content="Feliks Krutsko is a professional welder/fitter with over 20 years of experience. Explore his portfolio of projects throughout the years." />
+
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer"
+	      integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
+	      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap">
+
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+	<div class="site-body">
+
+		<!---------------------------------------------------------------------------->
+		<!-- Header                                                                 -->
+		<!---------------------------------------------------------------------------->
+
+		<header class="site-header">
+			<div class="container">
+				<div class="row text-center pt-5">
+
+					<h1   class="col-12 part-h1 font-weight-400 display-4"><strong class="font-weight-extra-bold">FELIKS</strong> KRUTSKO</h1>
+					<h2   class="col-12 part-h2 font-weight-400 h3">PROFESSIONAL WELDER <span class="font-campton">&amp;</span> FITTER</h2>
+					<p    class="col-12 mt-2 mb-4">Connect with me on <a class="h6" target="_blank" rel="noopener noreferrer" aria-label="Feliks Krutsko LinkedIn" href="https://linkedin.com/in/dkrutsko">LinkedIn</a> or download my <a class="h6" target="_blank" aria-label="Feliks Krutsko Resume" href="resume.pdf">Resume</a></p>
+					<span class="col-12 mt-0 mb-4"><hr /></span>
+
+				</div>
+			</div>
+		</header>
+
+		<main class="site-main">
+
+			<!---------------------------------------------------------------------------->
+			<!-- Photos                                                                 -->
+			<!---------------------------------------------------------------------------->
+
+			<section class="site-photos">
+				<div class="container">
+					<div class="row">
+
+					<input class="sa-radio sa-radio-none d-none" id="site-photos-none"  name="site-photos-toggle" type="radio" checked />
+
+					{{#each thumbs}}
+						<div class="col-6 col-md-4 col-lg-3">
+
+							<label class="part-thumb mb-4" for="site-photos-{{this}}">
+								<svg class="part-holder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-hidden="true"></svg>
+								<img class="part-sprite lazy-image" data-src="thumbs/{{this}}.jpg" data-src-2x="thumbs/{{this}}@2x.jpg" />
+								<noscript>
+									<img class="part-sprite" loading="lazy"
+										 src="thumbs/{{this}}.jpg"
+									  srcset="thumbs/{{this}}.jpg    1x,
+											  thumbs/{{this}}@2x.jpg 2x" />
+								</noscript>
+							</label>
+										  <p>{{this}}</p>
+
+						</div>
+
+						<input class="sa-radio sa-radio-{{this}} d-none" id="site-photos-{{this}}" name="site-photos-toggle" type="radio" />
+
+						<div class="part-photo">
+
+							<label class="part-close" for="site-photos-none">
+								<svg class="part-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+									<path d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z" />
+								</svg>
+							</label>
+
+							<div class="part-canvas">
+
+								<label class="part-prev" for="site-photos-{{prevItemWrap ../thumbs @index}}">
+									<span class="part-nav">
+										<svg class="part-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+											<path d="M15.28 5.22a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 000 1.06l6.25 6.25a.75.75 0 101.06-1.06L9.56 12l5.72-5.72a.75.75 0 000-1.06z" />
+										</svg>
+									</span>
+								</label>
+
+								<img class="part-sprite"
+									 src="photos/{{this}}.jpg"
+								  srcset="photos/{{this}}.jpg    1x,
+										  photos/{{this}}@2x.jpg 2x" />
+
+								<label class="part-next" for="site-photos-{{nextItemWrap ../thumbs @index}}">
+									<span class="part-nav">
+										<svg class="part-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+											<path d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z" />
+										</svg>
+									</span>
+								</label>
+
+							</div>
+
+						</div>
+
+					{{/each}}
+
+					</div>
+				</div>
+			</section>
+
+		</main>
+
+		<!---------------------------------------------------------------------------->
+		<!-- Footer                                                                 -->
+		<!---------------------------------------------------------------------------->
+
+		<footer class="site-footer">
+			<nav class="container">
+				<div class="row text-center">
+
+					<p class="col-12 mt-0 mb-4">&copy; 2022 Feliks Krutsko</p>
+
+				</div>
+			</nav>
+		</footer>
+
+	</div>
+
+	<!---------------------------------------------------------------------------->
+	<!-- Scripts                                                                -->
+	<!---------------------------------------------------------------------------->
+
+	<script src="https://www.googletagmanager.com/gtag/js?id=G-2TF4MJB0JL" async></script>
+	<script src="index.js"></script>
+
+</body>
+</html>
