@@ -1,4 +1,40 @@
+# Generic
 .DS_Store
-/work
 /node_modules
 npm-debug.log
+
+# Any ignored images
+2012_08_11_f36xuz6p*
+2012_08_11_qs51useg*
+2012_12_11_wgr17x8n*
+2012_15_11_b9d8awpp*
+2012_15_11_c667io96*
+2012_21_11_neh0s20c*
+2012_22_07_hxcy69zy*
+2013_12_11_5vebve74*
+2013_14_01_1sqsnq6o*
+2013_14_01_n8079swt*
+2013_15_01_8wgfjt9o*
+2013_16_04_5ooleegn*
+2013_16_04_plzqmgg6*
+2013_18_11_1l75okc1*
+2013_19_11_0vo275q3*
+2013_20_12_jpgt75jo*
+2013_20_12_xv2wmefh*
+2013_21_04_9ks5maoh*
+2013_21_06_9tl9odry*
+2013_21_11_7cwq2sg2*
+2013_25_04_mbzpsm9z*
+2013_25_07_3e502auf*
+2013_27_09_1yd22h40*
+2013_27_09_sllpvtgb*
+2019_08_08_7b80lu3n*
+2020_02_11_6cx4yarl*
+2020_09_11_urwpjbun*
+2021_09_06_krqmf6px*
+2021_21_09_fi1g0ewr*
+2021_25_12_e5uldihn*
+2021_29_07_i3n27c7k*
+
+# Image work directory
+/work
