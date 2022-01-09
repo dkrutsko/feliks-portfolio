@@ -259,63 +259,37 @@ html.no-js img.lazy-image
 .site-photos .part-photo .part-canvas .part-prev,
 .site-photos .part-photo .part-canvas .part-next
 {
-	display: flex;
-	cursor: pointer;
-
-	 width: 6rem;
 	height: 100%;
 	position: absolute;
 	top: 0rem;
 
-	opacity: 0.01; /* For mobile to pick up on */
-	transition: opacity 200ms ease-in-out 750ms;
+	cursor: pointer;
 }
 
-.site-photos .part-photo .part-canvas .part-prev {  left: 0rem; justify-content: flex-start; }
-.site-photos .part-photo .part-canvas .part-next { right: 0rem; justify-content: flex-end;   }
-
-.site-photos .part-photo .part-canvas:hover .part-prev,
-.site-photos .part-photo .part-canvas:hover .part-next
-{
-	opacity: 1.00;
-	transition: none;
-}
-
-.site-photos .part-photo .part-canvas .part-prev .part-nav,
-.site-photos .part-photo .part-canvas .part-next .part-nav
-{
-	display: flex;
-	justify-content: center;
-	    align-items: center;
-
-	 width: 5rem;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.3);
-}
-
-.site-photos .part-photo .part-canvas .part-prev .part-nav .part-icon,
-.site-photos .part-photo .part-canvas .part-next .part-nav .part-icon
-{
-	  width: 3.0rem;
-	 height: 3.0rem;
-	padding: 0.5rem;
-	border-radius: 50%;
-	font-size: 1.0rem;
-
-	display: flex;
-	justify-content: center;
-	    align-items: center;
-
-	background: rgba(245, 245, 245, 0.9);
-}
+.site-photos .part-photo .part-canvas .part-prev { width: 30%;  left: 0rem; }
+.site-photos .part-photo .part-canvas .part-next { width: 70%; right: 0rem; }
 
 /*----------------------------------------------------------------------------*/
 
-.site-photos .part-photo .part-canvas .part-sprite
+.site-photos .part-photo .part-canvas .part-sprite,
+.site-photos .part-photo .part-canvas .part-sprite-load
 {
+	position: relative;
 	max-width:  100%;
 	max-height: 90vh;
 	object-fit: contain;
+	transition: none;
+}
+
+/* These are only used for preloading adjacent images */
+.site-photos .part-photo .part-canvas .part-sprite-load
+{
+	 width: 1px;
+	height: 1px;
+
+	position: absolute;
+	left: 0rem;
+	 top: 0rem;
 }
 
 

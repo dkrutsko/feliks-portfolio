@@ -25,20 +25,14 @@ const INDEX_HBS     = path.join (__dirname, 'index.hbs' );
 const INDEX_CONTENT = fs.readFileSync (INDEX_HBS, { encoding:'utf8' });
 const INDEX_TMPL    = handlebars.compile (INDEX_CONTENT);
 
-// Returns prev element in the array and wraps if reaches the head
-handlebars.registerHelper ('prevItemWrap', function (array, index)
+Number.prototype.mod = function (n)
 {
-	if (!Array.isArray (array))
-		throw new Exception ('Must pass array to #prevItemWrap');
+  return ;
+};
 
-	if (typeof index !== 'number')
-		throw new Exception ('Must pass index to #prevItemWrap');
 
-	return array[index - 1 < 0 ? array.length - 1 : index - 1];
-});
-
-// Returns next element in the array and wraps if reaches the tail
-handlebars.registerHelper ('nextItemWrap', function (array, index)
+// Returns the element in the array that is an amount away from the index
+handlebars.registerHelper ('seqItemWrap', function (array, index, amount)
 {
 	if (!Array.isArray (array))
 		throw new Exception ('Must pass array to #nextItemWrap');
@@ -46,7 +40,12 @@ handlebars.registerHelper ('nextItemWrap', function (array, index)
 	if (typeof index !== 'number')
 		throw new Exception ('Must pass index to #nextItemWrap');
 
-	return array[index + 1 >= array.length ? 0 : index + 1];
+	if (typeof amount !== 'number')
+		throw new Exception ('Must pass amount to #nextItemWrap');
+
+	// https://stackoverflow.com/q/4467539
+	// JavaScript has a bug performing modulo when negative numbers are being used
+	return array[(((index + amount) % array.length) + array.length) % array.length];
 });
 
 fs.writeFileSync (INDEX_HTML,

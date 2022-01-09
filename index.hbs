@@ -65,10 +65,7 @@
 								<svg class="part-holder" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-hidden="true"></svg>
 								<img class="part-sprite lazy-image" data-src="thumbs/{{this}}.jpg" data-src-2x="thumbs/{{this}}@2x.jpg" />
 								<noscript>
-									<img class="part-sprite" loading="lazy"
-										 src="thumbs/{{this}}.jpg"
-									  srcset="thumbs/{{this}}.jpg    1x,
-											  thumbs/{{this}}@2x.jpg 2x" />
+									<img class="part-sprite" loading="lazy" src="thumbs/{{this}}.jpg" srcset="thumbs/{{this}}.jpg 1x, thumbs/{{this}}@2x.jpg 2x" />
 								</noscript>
 							</label>
 										  <p>{{this}}</p>
@@ -87,26 +84,18 @@
 
 							<div class="part-canvas">
 
-								<label class="part-prev" for="site-photos-{{prevItemWrap ../thumbs @index}}">
-									<span class="part-nav">
-										<svg class="part-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-											<path d="M15.28 5.22a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 000 1.06l6.25 6.25a.75.75 0 101.06-1.06L9.56 12l5.72-5.72a.75.75 0 000-1.06z" />
-										</svg>
-									</span>
-								</label>
+								<img class="part-sprite-load lazy-image" data-src="photos/{{seqItemWrap ../thumbs @index -1}}.jpg" data-src-2x="photos/{{seqItemWrap ../thumbs @index -1}}@2x.jpg" />
+								<img class="part-sprite-load lazy-image" data-src="photos/{{seqItemWrap ../thumbs @index  1}}.jpg" data-src-2x="photos/{{seqItemWrap ../thumbs @index  1}}@2x.jpg" />
+								<img class="part-sprite      lazy-image" data-src="photos/{{this}}.jpg" data-src-2x="photos/{{this}}@2x.jpg" />
 
-								<img class="part-sprite"
-									 src="photos/{{this}}.jpg"
-								  srcset="photos/{{this}}.jpg    1x,
-										  photos/{{this}}@2x.jpg 2x" />
+								<noscript>
+									<img class="part-sprite-load" loading="lazy" src="photos/{{seqItemWrap ../thumbs @index -1}}.jpg" srcset="photos/{{seqItemWrap ../thumbs @index -1}}.jpg 1x, photos/{{seqItemWrap ../thumbs @index -1}}@2x.jpg 2x" />
+									<img class="part-sprite-load" loading="lazy" src="photos/{{seqItemWrap ../thumbs @index  1}}.jpg" srcset="photos/{{seqItemWrap ../thumbs @index  1}}.jpg 1x, photos/{{seqItemWrap ../thumbs @index  1}}@2x.jpg 2x" />
+									<img class="part-sprite"      loading="lazy" src="photos/{{this}}.jpg" srcset="photos/{{this}}.jpg 1x, photos/{{this}}@2x.jpg 2x" />
+								</noscript>
 
-								<label class="part-next" for="site-photos-{{nextItemWrap ../thumbs @index}}">
-									<span class="part-nav">
-										<svg class="part-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-											<path d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z" />
-										</svg>
-									</span>
-								</label>
+								<label class="part-prev" for="site-photos-{{seqItemWrap ../thumbs @index -1}}"></label>
+								<label class="part-next" for="site-photos-{{seqItemWrap ../thumbs @index  1}}"></label>
 
 							</div>
 
