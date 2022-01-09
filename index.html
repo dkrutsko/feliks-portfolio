@@ -3477,8 +3477,21 @@
 	<!-- Scripts                                                                -->
 	<!---------------------------------------------------------------------------->
 
-	<script src="https://www.googletagmanager.com/gtag/js?id=G-2TF4MJB0JL" async></script>
 	<script src="index.js"></script>
+
+	<!---------------------------------------------------------------------------->
+	<!-- Analytics                                                              -->
+	<!---------------------------------------------------------------------------->
+
+	<script src="https://www.googletagmanager.com/gtag/js?id=G-2TF4MJB0JL" async></script>
+	<script>
+		window.dataLayer = window.dataLayer || [ ];
+		function gtag() {
+			dataLayer.push (arguments);
+		}
+		gtag ('js', new Date());
+		gtag ('config', 'G-2TF4MJB0JL');
+	</script>
 
 </body>
 </html>
