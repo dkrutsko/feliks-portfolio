@@ -207,7 +207,7 @@ html.no-js img.lazy-image
 	    align-items: center;
 }
 
-.site-photos .sa-radio:checked + .part-photo
+.site-photos .part-radio:checked + .part-photo
 {
 	display: flex;
 }
