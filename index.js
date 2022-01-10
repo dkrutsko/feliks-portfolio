@@ -59,3 +59,12 @@ window.addEventListener ('load', event =>
 			.forEach (i => scroller.observe (i));
 	}
 });
+
+
+
+//----------------------------------------------------------------------------//
+// Greeting                                                                   //
+//----------------------------------------------------------------------------//
+
+console.info ("%c Hey There! Welcome to My Site! 👋",              "font-size: 18px");
+console.info ("%c https://github.com/dkrutsko/feliks.krutsko.net", "font-size: 13px");
